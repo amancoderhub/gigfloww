@@ -47,13 +47,42 @@
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    overflow-x: hidden;
+  }
+
+  /* Add responsive-friendly base styles */
+  img {
+    @apply w-full h-auto;
+  }
+
+  h1 {
+    @apply text-2xl sm:text-3xl md:text-4xl font-bold;
+  }
+
+  h2 {
+    @apply text-xl sm:text-2xl md:text-3xl font-semibold;
+  }
+
+  h3 {
+    @apply text-lg sm:text-xl font-semibold;
+  }
+
+  p {
+    @apply text-base sm:text-lg leading-relaxed;
+  }
+
+  a {
+    @apply text-primary underline hover:opacity-80;
+  }
+
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 }
